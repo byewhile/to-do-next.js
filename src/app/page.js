@@ -10,13 +10,15 @@ export default function Home() {
   const addTask = (e) => {
     e.preventDefault();
 
-    const task = {
-      id: uuidv4(),
-      value: value
-    }
+    if (value != "") {
+      const task = {
+        id: uuidv4(),
+        value: value
+      }
 
-    setList([...list, task]);
-    setValue("");
+      setList([...list, task]);
+      setValue("");
+    }
   }
 
   const deleteTask = (id) => {
